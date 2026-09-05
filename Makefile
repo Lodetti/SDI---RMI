@@ -14,10 +14,9 @@ CLASSES = \
 	AlunoServiceImpl.java\
 	Client.java\
 	SecretariaService.java\
-	Server.java
+	Server.java\
 	Turma.java\
-	TurmaService.java\
-	TurmaServiceImpl.java\
+	TurmaService.java
 	
 default: classes
 

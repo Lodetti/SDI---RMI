@@ -5,7 +5,7 @@ public class Client {
     public static void main(String[] args) {
         try {
             // Locate registry at localhost (or IP address of host)
-            Registry registry = LocateRegistry.getRegistry("localhost", 1099);
+            Registry registry = LocateRegistry.getRegistry("localhost", 6600);
 
             // Retrieve stub references from registry
             AlunoService alunoService = (AlunoService) registry.lookup("AlunoService");

@@ -4,8 +4,8 @@ import java.rmi.registry.Registry;
 public class Server {
     public static void main(String[] args) {
         try {
-            // Create RMI registry on port 1099
-            Registry registry = LocateRegistry.createRegistry(1099);
+            // Create RMI registry on port 6600
+            Registry registry = LocateRegistry.createRegistry(6600);
 
             // Instantiate service implementations
             AlunoService alunoService = new AlunoServiceImpl();

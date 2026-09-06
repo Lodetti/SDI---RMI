@@ -9,12 +9,12 @@ public class Server {
 
             // Instantiate service implementations
             AlunoService alunoService = new AlunoServiceImpl();
-            // TurmaService turmaService = new TurmaServiceImpl();
+            TurmaService turmaService = new TurmaServiceImpl(alunoService);
             // SecretariaService secretariaService = new SecretariaServiceImpl(alunoService, turmaService);
 
             // Bind objects to registry names
             registry.rebind("AlunoService", alunoService);
-            // registry.rebind("TurmaService", turmaService);
+            registry.rebind("TurmaService", turmaService);
             // registry.rebind("SecretariaService", secretariaService);
 
             System.out.println("Academic System RMI Server is running...");

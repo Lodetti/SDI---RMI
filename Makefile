@@ -16,7 +16,8 @@ CLASSES = \
 	SecretariaService.java\
 	Server.java\
 	Turma.java\
-	TurmaService.java
+	TurmaService.java\
+	TurmaServiceImpl.java
 	
 default: classes
 

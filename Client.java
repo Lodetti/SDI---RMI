@@ -11,6 +11,7 @@ public class Client {
             // Retrieve stub references from registry
             AlunoService alunoService = (AlunoService) registry.lookup("AlunoService");
             TurmaService turmaService = (TurmaService) registry.lookup("TurmaService");
+            SecretariaService secretariaService = (SecretariaService) registry.lookup("SecretariaService");
 
             // Invoke remote methods
             Aluno novoAluno = new Aluno("João Silva", "joao@email.com", "2026001");
@@ -22,11 +23,11 @@ public class Client {
             Turma novaTurma = new Turma("SDI");
             turmaService.cadastrarTurma(novaTurma);
 
-            turmaService.adicionarAluno("SDI", "2026001");
+            secretariaService.matricularAluno("2026001", "SDI");
             List<Aluno> alunosEmSdi = turmaService.listarAlunos("SDI");
             System.out.println("Alunos na turma de SDI: " + alunosEmSdi);
 
-            turmaService.removerAluno("SDI", "2026001");
+            secretariaService.cancelarMatricula("2026001", "SDI");
             alunosEmSdi = turmaService.listarAlunos("SDI");
             System.out.println("Alunos em SDI após remoção: " + alunosEmSdi);
 

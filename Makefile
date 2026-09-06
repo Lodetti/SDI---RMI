@@ -14,6 +14,7 @@ CLASSES = \
 	AlunoServiceImpl.java\
 	Client.java\
 	SecretariaService.java\
+	SecretariaServiceImpl.java\
 	Server.java\
 	Turma.java\
 	TurmaService.java\

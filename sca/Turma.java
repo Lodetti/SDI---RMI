@@ -1,3 +1,4 @@
+package sca;
 import java.util.ArrayList;
 import java.util.List;
 import java.io.Serializable;
@@ -11,6 +12,8 @@ public class Turma implements Serializable{
     public Turma(String codigo) {
         this.codigo = codigo;
         this.alunos = new ArrayList<>(); 
+    }
+    public Turma() {
     }
 
     public void adicionarAluno(Aluno aluno) {

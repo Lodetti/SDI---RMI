@@ -1,28 +1,37 @@
-# GNU Makefile
-JAR=jar
-JAVA=java
-JAVAC=javac
+JAVAC = javac
+JAVA = java
+JFLAGS = -g
+CP = "lib/*;."
 
-JFLAGS = -g 
-.SUFFIXES: .java .class
-.java.class:
-	$(JAVAC) $(JFLAGS) $*.java
+# Lista de todos os arquivos .java dentro do pacote sca
+SOURCES = \
+	sca/Aluno.java \
+	sca/AlunoService.java \
+	sca/AlunoServiceImpl.java \
+	sca/Client.java \
+	sca/SecretariaService.java \
+	sca/SecretariaServiceImpl.java \
+	sca/Server.java \
+	sca/Turma.java \
+	sca/TurmaService.java \
+	sca/TurmaServiceImpl.java \
+	sca/WSSCA.java \
+	sca/WSSCAImpl.java \
+	sca/WSServer.java
 
-CLASSES = \
-	Aluno.java\
-	AlunoService.java\
-	AlunoServiceImpl.java\
-	Client.java\
-	SecretariaService.java\
-	SecretariaServiceImpl.java\
-	Server.java\
-	Turma.java\
-	TurmaService.java\
-	TurmaServiceImpl.java
-	
-default: classes
+# Converte os nomes .java para .class
+CLASSES = $(SOURCES:.java=.class)
 
-classes: $(CLASSES:.java=.class)
+default: compile
+
+compile:
+	$(JAVAC) $(JFLAGS) -cp $(CP) sca/*.java
+
+run-rmi:
+	$(JAVA) -cp $(CP) sca.Server
+
+run-ws:
+	$(JAVA) -cp $(CP) sca.WSServer
 
 clean:
-	rm -f *.class 
+	del /Q sca\*.class
